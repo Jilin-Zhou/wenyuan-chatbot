@@ -1,0 +1,5 @@
+Pause,[(millisecond#uint64)&]
+PlaySound,[(sound#string)&(language#string)&(loop#bool)&(stop_all#bool)&]
+Rotate2d,[(rotation#double)&]
+RotateTo2d,[(rotation#double)&]
+StopSound,[(sound#string)&(language#string)&]

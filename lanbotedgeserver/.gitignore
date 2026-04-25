@@ -1,0 +1,7 @@
+__pycache__
+/msc/
+/edge_server/msc/
+
+.history/*
+
+.env

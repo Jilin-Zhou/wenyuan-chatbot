@@ -1,0 +1,8 @@
+__pycache__/
+*.log
+static/*.xlsx
+botvenv/
+.conda/
+.vscode/
+.idea/
+*.ipynb_checkpoints/

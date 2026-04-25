@@ -1,0 +1,87 @@
+# 文渊机器人项目 Docker Compose 配置
+# 用于本地调试和开发环境
+
+version: '3.8'
+
+services:
+  # ==================== chatbot2024 ====================
+  # 知识库+大模型对话后端
+  # 使用本地LMStudio (宿主机127.0.0.1:1234)
+  chatbot:
+    build:
+      context: ./chatbot2024
+      dockerfile: Dockerfile
+    container_name: wenyuan-chatbot
+    ports:
+      - "1090:1090"
+    environment:
+      # LMStudio在宿主机运行，使用host.docker.internal访问
+      - LMSTUDIO_URL=http://host.docker.internal:1234/v1
+    volumes:
+      # 挂载知识库数据库（持久化）
+      - ./chatbot2024/static:/app/static
+      # 挂载源代码（开发调试时实时更新）
+      - ./chatbot2024:/app
+    networks:
+      - wenyuan-network
+    # 移除profiles，默认启动
+    restart: unless-stopped
+
+  # ==================== lanbotedgeserver ====================
+  # 边缘服务器 + 机器人控制
+  # 注意：语音功能在Docker中可能受限（需要音频设备）
+  edge-server:
+    build:
+      context: ./lanbotedgeserver
+      dockerfile: Dockerfile
+    container_name: wenyuan-edge-server
+    ports:
+      - "20550:20550"
+      - "20551:20551"
+    environment:
+      - CHATIE_API_URL=http://chatbot:1090/chatbot/api/v1.0/get
+      - CHAT_CONF_NAME=default
+      - VOICE_EN=false  # Docker中禁用语音功能
+      - BOT_TYPE=SMART
+    volumes:
+      # 挂载配置文件
+      - ./lanbotedgeserver/resources:/app/resources
+      # 挂载源代码（开发调试）
+      - ./lanbotedgeserver/edge_server:/app/edge_server
+    networks:
+      - wenyuan-network
+    # depends_on: chatbot已跳过
+    restart: unless-stopped
+
+  # ==================== lanbot-front-chat ====================
+  # Vue 3 前端界面
+  frontend:
+    build:
+      context: ./lanbot-front-chat
+      dockerfile: Dockerfile
+      target: development  # 使用开发阶段
+    container_name: wenyuan-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_WS_PORT=20551
+      - VITE_API_PORT=20550
+    volumes:
+      # 挂载源代码（开发调试时热更新）
+      - ./lanbot-front-chat/src:/app/src
+      - ./lanbot-front-chat/public:/app/public
+    networks:
+      - wenyuan-network
+    # depends_on: chatbot和edge-server暂时跳过
+    restart: unless-stopped
+
+# ==================== 网络配置 ====================
+networks:
+  wenyuan-network:
+    driver: bridge
+    name: wenyuan-network
+
+# ==================== 数据卷（可选） ====================
+volumes:
+  chatbot-data:
+    name: wenyuan-chatbot-data

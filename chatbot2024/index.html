@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket 流式通信</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="message" placeholder="输入消息">
+        <button onclick="sendMessage()">发送消息</button>
+    </div>
+    <div id="messages"></div>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8765");
+
+        socket.onmessage = function (event) {
+        const message = event.data;
+        console.log("接收到消息: " + message);
+        const messagesDiv = document.getElementById("messages");
+        const messageSpan = document.createElement("span");
+        messageSpan.textContent = message; 
+        messagesDiv.appendChild(messageSpan);
+    };
+
+        function sendMessage() {
+            const messageInput = document.getElementById("message");
+            const message = messageInput.value;
+            socket.send(message);
+            messageInput.value = "";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+- name: 助顺邮我
+  title: 助顺邮我
+  description: 
+  imgURL: http://localhost:8000/static2/videofmh3.mp4
+  index: 1
+- name: 服贸会纪实|“00后”展商和他们的“生锈机器人”
+  title: 服贸会纪实|“00后”展商和他们的“生锈机器人”
+  description: 
+  imgURL: http://localhost:8000/static2/videofmh1.mp4
+  index: 2
+- name: 科技扶贫 红色筑梦
+  title: 科技扶贫 红色筑梦
+  description: 
+  imgURL: http://localhost:8000/static2/videofmh2.mp4
+  index: 3
+- name: 五月鲜花
+  title: 五月鲜花
+  description: 
+  imgURL: http://localhost:8000/static2/wN1.jpg
+  index: 4
+- name: 沙河超市
+  title: 沙河超市
+  description: 
+  imgURL: http://localhost:8000/static2/wN2.jpg
+  index: 5
+- name: 服贸会
+  title: 服贸会
+  description: 
+  imgURL: http://localhost:8000/static2/wN3.jpg
+  index: 6
+- name: 教学楼
+  title: 教学楼
+  description: 
+  imgURL: http://localhost:8000/static2/wN4.png
+  index: 7
+- name: 华为杯
+  title: 华为杯
+  description: 
+  imgURL: http://localhost:8000/static2/wN5.jpg
+  index: 8
+- name: 运动场
+  title: 运动场
+  description: 
+  imgURL: http://localhost:8000/static2/wN6.jpg
+  index: 9
+- name: 运动场
+  title: 运动场
+  description: 
+  imgURL: http://localhost:8000/static2/wN7.jpg
+  index: 10
+- name: 企业参观
+  title: 企业参观
+  description: 
+  imgURL: http://localhost:8000/static2/wN8.jpg
+  index: 11
+- name: 秋之韵
+  title: 秋之韵
+  description: 
+  imgURL: http://localhost:8000/static2/wN9.jpg
+  index: 12

@@ -1,0 +1,23 @@
+# 默认配置文件
+# 文渊机器人默认配置
+
+# 机器人基本信息
+robot:
+  name: 文渊
+  location: 北京北站
+  developer: 北京邮电大学蓝图创新工作室
+
+# 问答系统配置
+qa:
+  enabled: true
+  similarity_threshold: 0.4
+  max_answer_length: 100
+
+# 语音配置（Docker中禁用）
+voice:
+  enabled: false
+
+# 导航配置
+navigation:
+  enabled: true
+  default_response: 文渊的工作很忙，去过的地方不多，换个地点问问吧

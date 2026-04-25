@@ -1,0 +1,38 @@
+# Docker忽略文件 - chatbot2024
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info
+dist
+build
+*.egg
+
+# 虚拟环境
+.venv
+venv
+ENV
+botvenv
+
+# IDE
+.idea
+.vscode
+
+# 测试
+test_db.py
+
+# 日志
+*.log
+
+# Git
+.git
+
+# 环境变量
+.env
+
+# 文档
+*.md
+!README.md
