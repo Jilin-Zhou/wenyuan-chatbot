@@ -217,11 +217,12 @@ $RECYCLE.BIN/
 *.orig
 
 # =========================
-# Documentation (optional)
+# Documentation
 # =========================
-# Uncomment if you don't want to track markdown docs
-# *.md
-# !README.md
+# Only track README.md, ignore other markdown files
+*.md
+!README.md
+!**/README.md
 
 # =========================
 # Misc
