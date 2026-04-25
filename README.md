@@ -1,6 +1,6 @@
 # 文渊智能问答机器人
 
-基于本地大模型的知识库问答系统，部署于北京北站服务机器人。
+机器人维修。
 
 ## 项目简介
 
@@ -71,7 +71,7 @@
 #### 2. 克隆项目
 
 ```bash
-git clone https://github.com/你的用户名/wenyuan-chatbot.git
+git clone https://github.com/Jilin-Zhou/wenyuan-chatbot.git
 cd wenyuan-chatbot
 ```
 
@@ -127,7 +127,7 @@ docker system prune -a --volumes
 #### 2. 克隆项目
 
 ```bash
-git clone https://github.com/你的用户名/wenyuan-chatbot.git
+git clone https://github.com/Jilin-Zhou/wenyuan-chatbot.git
 cd wenyuan-chatbot
 ```
 
