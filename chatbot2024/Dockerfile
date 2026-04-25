@@ -46,9 +46,9 @@ RUN mkdir -p /app/static
 # 暴露端口
 EXPOSE 1090
 
-# 健康检查
+# 健康检查（使用简单的端口检查，避免触发embedding计算）
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:1090/chatbot/api/v1.0/get?question=health')" || exit 1
+    CMD python -c "import socket; s=socket.socket(); s.connect(('localhost', 1090)); s.close()" || exit 1
 
 # 启动应用
 CMD ["python", "app.py", "--port", "1090"]
