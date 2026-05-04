@@ -1,6 +1,6 @@
-const APPID = '9c333155' //在科大讯飞控制台中获取的服务接口认证信息
-const API_SECRET = 'YmIwNzhjYWIxODhhZTUzODJlOGM4MmI1' //在科大讯飞控制台中获取的服务接口认证信息
-const API_KEY = 'fde3380b0afa0cd20c6ee6a3b80b03b9' //在科大讯飞控制台中获取的服务接口认证信息
+const APPID = '' //在科大讯飞控制台中获取的服务接口认证信息
+const API_SECRET = '' //在科大讯飞控制台中获取的服务接口认证信息
+const API_KEY = '' //在科大讯飞控制台中获取的服务接口认证信息
 import CryptoJS from 'crypto-js'
 var socket
 
